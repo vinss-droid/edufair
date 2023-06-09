@@ -39,7 +39,7 @@ const Contact = () => {
                         Email
                     </p>
                     <p className="text-center mt-3 text-gray-500">
-                        edufair@gmail.com
+                        edufairhimsika@gmail.com
                     </p>
                 </div>
             </div>

@@ -1,17 +1,14 @@
 import * as React from "react";
 import axios from "axios";
 import {Link, NavLink, useNavigate} from "react-router-dom";
+import EdufairPNG from '../../img/logo/logo-edufair-2023.png'
+import {isAuthenticated, signOut, user, useUserToken} from "../../helper/Auth";
 import {currentURL} from "../../helper/Utills";
 import {useGoogleLogin} from "@react-oauth/google";
-import {useSignIn, useSignOut} from "react-auth-kit";
-import {isAuthenticated, user} from "../../helper/Auth";
-import EdufairPNG from '../../img/logo/logo-edufair-2023.png'
+import {useLogin} from "../../store/localStorage";
 
 const Navbar = () => {
 
-    const signIn = useSignIn()
-    const signOut = useSignOut()
-    const authorization = user().header
     const [dropHidden, setDropHidden] = React.useState(false)
     const [toggleProfile, setToggleProfile] = React.useState(false)
     const [navbarToggle, setNavbarToggle] = React.useState(false)
@@ -44,42 +41,38 @@ const Navbar = () => {
         }
 
         axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, userData, {
-          headers: {
-              'X-Authorization': process.env.REACT_APP_API_KEY
-          }
+            headers: {
+                'X-Authorization': process.env.REACT_APP_API_KEY
+            }
         }).then((res) => {
             if (res.status === 200) {
-                if(signIn(
-                    {
-                        token: res.data.token,
-                        expiresIn:res.data.expired,
-                        tokenType: "Bearer",
-                        authState: res.data.user,
-                    }
-                )){
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                if(useLogin(res.data.token, res.data.user)){
                     setIsLoading(false)
                 }else {
-
+                    setIsLoading(false)
                 }
             }
         }).catch((err) => {
-            console.log(err)
+            setIsLoading(false)
         })
 
     }
 
     const logout = () => {
+        setIsLoading(true)
         axios.get(`${process.env.REACT_APP_API_URL}/auth/logout`, {
             headers: {
                 'X-Authorization': process.env.REACT_APP_API_KEY,
-                'Authorization': authorization
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                'Authorization': useUserToken()
             }
         }).then((res) => {
-            console.log(res)
+            setIsLoading(false)
             signOut()
         }).catch((err) => {
-            console.log(err)
             if (err.response.status === 401) {
+                setIsLoading(false)
                 signOut()
             }
         })
@@ -114,7 +107,7 @@ const Navbar = () => {
                                             }}>
                                         <span className="sr-only">Open user menu</span>
                                         <img className="w-8 h-8 rounded-full"
-                                             src={user().picture} alt="user photo" />
+                                             src={user().picture} alt="user photo" referrerPolicy="no-referrer" />
                                     </button>
                                 ) : (
                                     <button
@@ -208,10 +201,12 @@ const Navbar = () => {
                             {/*</li>*/}
                             <hr/>
                             <li>
-                                <a onClick={logout}
-                                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                <button
+                                    disabled={isLoading}
+                                    onClick={logout}
+                                    className="w-full text-left px-4 py-1 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                     Sign out
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -242,7 +237,7 @@ const Navbar = () => {
                                 setDropHidden(false)
                                 setToggleProfile(false)
                             }} href="#"
-                               className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentURL() == '/event/silogy-expo' ? 'text-blue-700 font-semibold' : ''}`}>
+                                  className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentURL() == '/event/silogy-expo' ? 'text-blue-700 font-semibold' : ''}`}>
                                 Silogy Expo
                             </Link>
                         </li>
@@ -303,7 +298,7 @@ const Navbar = () => {
                                         setNavbarToggle(false)
                                         setToggleProfile(false)
                                     }} href="#"
-                                       className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentURL() == '/event/silogy-expo' ? 'text-blue-700 font-semibold' : ''}`}>
+                                          className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentURL() == '/event/silogy-expo' ? 'text-blue-700 font-semibold' : ''}`}>
                                         Silogy Expo
                                     </Link>
                                 </li>

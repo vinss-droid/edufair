@@ -1,10 +1,11 @@
+import * as React from 'react'
 import {WebinarIMG} from "../helper/Image";
 import TimelineWebinar from "../components/event/webinar/TimelineWebinar";
 import {setTitle} from "../helper/Utills";
 import QuestionAnswerWebinar from "../components/event/webinar/QuestionAnswerWebinar";
-
 const Webinar = () => {
     setTitle('Webinar Nasional')
+
     return (
         <div>
             <div className="container mx-auto mt-10 mb-6 px-8">
