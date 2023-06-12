@@ -16,6 +16,7 @@ import Navbar from "./components/layouts/Navbar";
 import {isAuthenticated} from "./helper/Auth";
 import {useQueryURL} from "./Utils/Utils";
 import ShortLink from "./pages/ShortLink";
+import {Analytics} from "@vercel/analytics/react";
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
   return (
       <Router>
           <div className="App select-none">
+              <Analytics />
               <Navbar />
               <Routes>
                   <Route exact path="/" element={<Home />} />
