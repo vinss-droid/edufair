@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate, useLocation} from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import BottomNavbar from "./components/layouts/BottomNavbar";
@@ -14,13 +14,20 @@ import RegisterWebinar from "./components/event/webinar/register/RegisterWebinar
 import RegisterWorkshop from "./components/event/workshop/register/RegisterWorkshop";
 import Navbar from "./components/layouts/Navbar";
 import {isAuthenticated} from "./helper/Auth";
+import {useQueryURL} from "./Utils/Utils";
+import ShortLink from "./pages/ShortLink";
 
 function App() {
 
     const PrivateRoute = ({ children }) => {
 
+        const location = useLocation()
+        const queryURL = useQueryURL()
+
         if (!isAuthenticated()) {
-            return <Navigate to="/auth/login" />;
+            return <Navigate
+                to={`${queryURL.get('next') === null ? `/auth/login?next=${location.pathname}` : `/auth/login?${queryURL.get('next')}`}`}
+            />;
         }
 
         return <>{children}</>;
@@ -28,8 +35,16 @@ function App() {
 
     const RedirectAfterLogin = ({ children }) => {
 
+        const location = useLocation()
+        const queryURL = useQueryURL()
+
         if (isAuthenticated()) {
-            return <Navigate to="/" />;
+            // return window.location.reload()
+            return <Navigate
+            to={`${queryURL.get('next') !== null ? queryURL.get('next') : '/'}`}
+            // state={{from: location}}
+            replace
+            />;
         }
 
         return <>{children}</>;
@@ -41,6 +56,7 @@ function App() {
               <Navbar />
               <Routes>
                   <Route exact path="/" element={<Home />} />
+                  <Route exact path="/workshop-pbb" element={<ShortLink to="/event/workshop/daftar" />} />
                   <Route exact path="/event/webinar" element={<Webinar />} />
                   <Route exact path="/event/workshop" element={<Workshop />} />
                   <Route exact path="/event/silogy-expo" element={<SilogyExpo />} />
@@ -62,11 +78,11 @@ function App() {
                           <RegisterWebinar />
                       </PrivateRoute>
                   } />
-                  {/*<Route exact path="/event/workshop/daftar" element={*/}
-                  {/*    <PrivateRoute>*/}
-                  {/*        <RegisterWorkshop />*/}
-                  {/*    </PrivateRoute>*/}
-                  {/*} />*/}
+                  <Route exact path="/event/workshop/daftar" element={
+                      <PrivateRoute>
+                          <RegisterWorkshop />
+                      </PrivateRoute>
+                  } />
 
               </Routes>
               <BottomNavbar />

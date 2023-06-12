@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {WebinarIMG} from "../helper/Image";
+import WebinarPamphlet from '../img/pamphlet/webinar.jpg'
 import TimelineWebinar from "../components/event/webinar/TimelineWebinar";
 import {setTitle} from "../helper/Utills";
 import QuestionAnswerWebinar from "../components/event/webinar/QuestionAnswerWebinar";
@@ -20,13 +21,13 @@ const Webinar = () => {
                             Informasi Universitas Singaperbangsa Karawang dalam divisi edukasi yang bertujuan
                             untuk memperluas dasar pengetahuan dan pengalaman.
                         </p>
-                        <p className="text-justify py-4">
+                        <p className="text-justify py-6">
                             Pada tahun 2023 ini, Webinar Nasional mengangkat Tema <br/> <span className="font-semibold">
                         "Belajar mengelola konten digital dalam strategi bisnis dengan ecommerce".</span> Jangan sampai ketinggalan dengan Webinar Nasional ini dan terus pantau untuk Timeline nya!
                         </p>
                     </div>
-                    <div className="w-6/12 max-[992px]:w-full">
-                        <img src={WebinarIMG(300)} alt="Webinar.png" className="ml-auto max-[992px]:mx-auto"/>
+                    <div className="w-6/12 max-[992px]:w-full mt-8">
+                        <img src={WebinarPamphlet} alt="Webinar.png" className="mx-auto w-[70%] rounded-md"/>
                     </div>
                 </div>
                 <div className="time-line mt-6">

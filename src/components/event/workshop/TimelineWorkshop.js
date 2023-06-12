@@ -1,7 +1,13 @@
 import {Link} from "react-router-dom";
+import axios from "axios";
+import {useUserToken} from "../../../helper/Auth";
+import * as React from "react";
+import {notifyError} from "../../../Utils/Utils";
+import {useIsAuthenticated} from "../../../store/localStorage";
 
 
 const TimelineWorkshop = () => {
+
     return (
         <ol className="relative border-l border-gray-200 dark:border-gray-700 mb-24 mt-16">
             <li className="mb-10 ml-6">
@@ -19,16 +25,16 @@ const TimelineWorkshop = () => {
                     </span>
                 </h3>
                 <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Dilaksanakan Pada <br className="md:hidden" /> 07 Mei 2023 - 17 Juni 2023
+                    Dilaksanakan Pada <br className="md:hidden" /> 13 Juni 2023 - 21 Juni 2023
                 </time>
                 <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
                     Para calon peserta yang akan mengikuti Workshop PBB diwajibkan untuk mendaftar pada tombol dibawah!
                 </p>
-                <button
-                    // to='/event/workshop/daftar'
+                <Link
+                    to='/event/workshop/daftar'
                     className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600  rounded-lg hover:bg-blue-700 hover:text-gray-100 focus:z-10 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 cursor-pointer disabled:bg-blue-400 disabled:cursor-not-allowed">
                     Daftar Workshop
-                </button>
+                </Link>
             </li>
             <li className="mb-10 ml-6">
                 <span

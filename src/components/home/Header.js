@@ -1,11 +1,12 @@
 import HeaderIMG from '../../img/header.jpg'
+import EDUFAIRPamphlet from '../../img/pamphlet/edufair.png'
 
 const Header = () => {
     return (
         <div className="container mx-auto my-[9.5%] px-5">
             <div className="flex flex-row justify-center gap-8 max-[1024px]:flex-col">
                 <div className="basis-1/2">
-                    <img src={HeaderIMG} alt="about" width="100%" className="rounded-lg"/>
+                    <img src={EDUFAIRPamphlet} alt="about" width="100%" className="rounded-lg"/>
                 </div>
                 <div className="basis-1/2 mt-10 max-[1200px]:mt-1">
                     <h4 className="text-3xl text-center font-semibold font-poppins">

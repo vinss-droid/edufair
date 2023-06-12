@@ -7,6 +7,7 @@ import 'filepond/dist/filepond.min.css'
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 import {GoogleOAuthProvider} from "@react-oauth/google";
 import {RecoilRoot} from "recoil";
+import {Toaster} from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <React.StrictMode>
           <RecoilRoot>
               <Suspense fallback={<div></div>}>
+                  <Toaster />
                   <App />
               </Suspense>
           </RecoilRoot>

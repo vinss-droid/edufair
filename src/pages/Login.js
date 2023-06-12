@@ -5,6 +5,8 @@ import {useGoogleLogin} from "@react-oauth/google";
 import {useSignIn} from "react-auth-kit";
 import {useLogin} from "../store/localStorage";
 import {Navigate, useNavigate} from "react-router-dom";
+import EDUFAIRLOGO from '../img/logo/logo-edufair-2023-bg.png'
+import {notifyError, useQueryURL} from "../Utils/Utils";
 
 const Login = () => {
 
@@ -12,6 +14,7 @@ const Login = () => {
 
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = React.useState(false)
+    const queryURL = useQueryURL()
 
     const googleLogin = useGoogleLogin({
         flow: 'implicit',
@@ -47,12 +50,14 @@ const Login = () => {
                 // eslint-disable-next-line react-hooks/rules-of-hooks
                 if(useLogin(res.data.token, res.data.user)){
                     setIsLoading(false)
+                    queryURL.get('next') !== null ? navigate(queryURL.get('next')) : navigate('/')
                 }else {
                     setIsLoading(false)
+                    queryURL.get('next') !== null ? navigate(queryURL.get('next')) : navigate('/')
                 }
             }
         }).catch((err) => {
-            console.log(err)
+            notifyError('Gagal Login!')
         })
 
     }
@@ -60,6 +65,7 @@ const Login = () => {
     return (
         <div className="flex items-center justify-center min-h-screen">
             <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 shadow-md">
+                <img src={EDUFAIRLOGO} alt="edufair logo" className="w-[50%] mx-auto my-6"/>
                 <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">
                     <span className="font-bold uppercase">Welcome to Edufair</span> <br/> Please signin to your account!
                 </h5>
