@@ -20,7 +20,7 @@ const Workshop = () => {
                 <link rel="icon" href={WorkshopPamphlet} />
                 <link rel="apple-touch-icon" href={WorkshopPamphlet} />
 
-                <meta property="og:url" content="https://telsquiz.com" />
+                <meta property="og:url" content="https://www.edufair.tech/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="EDUCATION FAIR" />
                 <meta property="og:description" content='Workshop PBB atau Program Belajar Bareng adalah sebuah workshop yang dilakukan dalam sehari untuk melakukan pelatihan singkat dibidang pemrograman. Pada tahun 2023 ini, Workshop PBB mengangkat Tema "React Integration with External APIS". Jangan sampai ketinggalan dengan Workshop PBB ini dan terus pantau untuk Timeline nya!' />
@@ -28,7 +28,7 @@ const Workshop = () => {
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:domain" content="telsquiz.com" />
-                <meta property="twitter:url" content="https://telsquiz.com" />
+                <meta property="twitter:url" content="https://www.edufair.tech/" />
                 <meta name="twitter:title" content="EDUCATION FAIR" />
                 <meta name="twitter:description" content='Workshop PBB atau Program Belajar Bareng adalah sebuah workshop yang dilakukan dalam sehari untuk melakukan pelatihan singkat dibidang pemrograman. Pada tahun 2023 ini, Workshop PBB mengangkat Tema "React Integration with External APIS". Jangan sampai ketinggalan dengan Workshop PBB ini dan terus pantau untuk Timeline nya!' />
                 <meta name="twitter:image" content={WorkshopPamphlet} />
