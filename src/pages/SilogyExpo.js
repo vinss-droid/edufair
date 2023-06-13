@@ -28,7 +28,7 @@ const SilogyExpo = () => {
                         </p>
                         <p className="text-justify py-4">
                             Pada tahun 2023 ini, Silogy Expo mengangkat Tema <br/> <span className="font-semibold">
-                        "Become a creative people in the era of digital technology".</span> Jangan sampai ketinggalan dengan Workshop PBB ini dan terus pantau untuk Timeline nya!
+                        "Become a creative people in the era of digital technology".</span> Jangan sampai ketinggalan dengan Silogy Expo ini dan terus pantau untuk Timeline nya!
                         </p>
                     </div>
                     <div className="w-6/12 max-[992px]:w-full">

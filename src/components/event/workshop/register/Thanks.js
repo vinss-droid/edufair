@@ -11,14 +11,14 @@ const Thanks = () => {
                     Terimakasih
                 </h5>
                 <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white text-center uppercase">
-                    Telah Mendaftar di Webinar Nasional yang diadakan oleh Education Fair 2023
+                    Telah Mendaftar di Workshop PBB yang diadakan oleh Education Fair 2023
                 </h5>
                 <hr/>
                 <p className="mt-5 font-semibold text-center max-[768px]:text-justify">
-                    Kamu berhasil mendaftar Webinar Nasional. Lihat tanda terima pendaftaran Webinar Nasional di Email kamu yang terdaftar pada Website ini, dan jangan lupa join ke Grup Webinar Nasional untuk informasi selanjutnya!
+                    Kamu berhasil mendaftar Workshop PBB. Jangan lupa join ke Grup Workshop PBB untuk informasi lebih lanjut!
                 </p>
                 <p className="mt-5 mb-10 font-normal text-gray-700 dark:text-gray-400 text-center">
-                    Jika kamu tidak menerima email tersebut, kamu dapat melihat ke kotak spam pada email kamu. Atau kamu dapat masuk ke dalam Grup Webinar Nasional langsung dengan menekan tombol dibawah.
+                    Kami tunggu kehadiran kamu di tanggal 24 Juni nanti, terimakasih!
                 </p>
 
                 <center>
