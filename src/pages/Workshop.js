@@ -1,5 +1,6 @@
 import {WorkshopIMG} from "../helper/Image";
 import EdufairLogo from '../img/logo/logo-edufair-2023.png'
+import WorkshopPamphletLandscape from '../img/pamphlet/Pamflet Workshop Landscape.png'
 import TimelineWorkshop from "../components/event/workshop/TimelineWorkshop";
 import QuestionAnswerWorkshop from "../components/event/workshop/QuestionAnswerWorkshop";
 import {setTitle} from "../helper/Utills";
@@ -50,7 +51,7 @@ const Workshop = () => {
                         </p>
                     </div>
                     <div className="w-6/12 max-[992px]:w-full">
-                        <img src={WorkshopIMG(270)} alt="workshop.png" className="mx-auto rounded-md"/>
+                        <img src={WorkshopPamphletLandscape} alt="workshop.png" className="mx-auto w-[70%] rounded-md"/>
                         {/*<img src={WorkshopIMG(70)} alt="workshop.png" className="mx-auto w-[70%] rounded-md"/>*/}
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {WorkshopIMG} from "../../../../helper/Image";
+import WorkshopPamphletLandscape from '../../../../img/pamphlet/Pamflet Workshop Landscape.png'
 import FormRegisterWorkshop from "./FormRegisterWorkshop";
 import axios from "axios";
 import {signOut, user, useUserToken} from "../../../../helper/Auth";
@@ -75,7 +76,7 @@ const RegisterWorkshop = () => {
                     <hr className="mb-12 max-[992px]:mb-1"/>
                     <div className="flex justify-center gap-3 max-[992px]:flex-col">
                         <div className="w-6/12 max-[992px]:w-full">
-                            <img src={WorkshopIMG(300)} alt="webinar" className="mx-auto pt-36 max-[992px]:pt-10"/>
+                            <img src={WorkshopPamphletLandscape} alt="webinar" className="mx-auto pt-36 max-[992px]:pt-10 rounded-md"/>
                             <h4 className="font-semibold text-3xl uppercase pt-6 text-center max-[992px]:text-2xl">
                                 Sisa Kuota Peserta : {remainingQuota}
                             </h4>
