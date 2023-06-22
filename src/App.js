@@ -55,17 +55,17 @@ function App() {
       <Router>
           <div className="App select-none">
               <Analytics />
-              <Navbar />
+              {/*<Navbar />*/}
               <Routes>
-                  <Route exact path="/" element={<Home />} />
-                  <Route exact path="/workshop-pbb" element={<ShortLink to="/event/workshop/daftar" />} />
-                  <Route exact path="/event/webinar" element={<Webinar />} />
-                  <Route exact path="/event/workshop" element={<Workshop />} />
-                  <Route exact path="/event/silogy-expo" element={<SilogyExpo />} />
-                  <Route exact path="/event/silogy-expo/lomba" element={<Contest />} />
-                  <Route exact path="/event/silogy-expo/talkshow" element={<Talkshow />} />
-                  <Route exact path="/event/silogy-expo/pameran" element={<Exhibition />} />
                   <Route exact path="*" element={<NotFound />} />
+                  {/*<Route exact path="/" element={<Home />} />*/}
+                  <Route exact path="/workshop-pbb" element={<ShortLink to="/event/workshop/daftar" />} />
+                  {/*<Route exact path="/event/webinar" element={<Webinar />} />*/}
+                  {/*<Route exact path="/event/workshop" element={<Workshop />} />*/}
+                  {/*<Route exact path="/event/silogy-expo" element={<SilogyExpo />} />*/}
+                  {/*<Route exact path="/event/silogy-expo/lomba" element={<Contest />} />*/}
+                  {/*<Route exact path="/event/silogy-expo/talkshow" element={<Talkshow />} />*/}
+                  {/*<Route exact path="/event/silogy-expo/pameran" element={<Exhibition />} />*/}
 
                   {/*Redirect After Login*/}
                   <Route exact path="/auth/login" element={
@@ -75,11 +75,11 @@ function App() {
                   } />
 
                   {/*Private Route*/}
-                  <Route exact path="/event/webinar/daftar" element={
-                      <PrivateRoute>
-                          <RegisterWebinar />
-                      </PrivateRoute>
-                  } />
+                  {/*<Route exact path="/event/webinar/daftar" element={*/}
+                  {/*    <PrivateRoute>*/}
+                  {/*        <RegisterWebinar />*/}
+                  {/*    </PrivateRoute>*/}
+                  {/*} />*/}
                   <Route exact path="/event/workshop/daftar" element={
                       <PrivateRoute>
                           <RegisterWorkshop />
