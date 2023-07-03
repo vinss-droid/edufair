@@ -39,7 +39,7 @@ const Countdown = () => {
                     <h3 className="text-2xl text-center font-bold uppercase">
                         Pendaftaran akan dibuka dalam
                     </h3>
-                    <h2 className="text-2xl text-center font-semibold mt-5 uppercase text-red-600">
+                    <h2 className="text-2xl text-center font-semibold mt-5 uppercase text-red-600 max-[768px]:text-sm">
                         {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
                             <p>
                                 <span>{timeLeft.days}</span>
