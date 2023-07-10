@@ -1,5 +1,6 @@
 import * as React from 'react';
 import EdufairLogo from "../../../img/logo/logo-edufair-2023.png";
+import SilogyLinks from "./SilogyLinks";
 
 const Countdown = () => {
 
@@ -35,26 +36,29 @@ const Countdown = () => {
                     <h4 className="text-4xl text-center font-bold mt-6 uppercase">
                         SILOGY EXPO 2023
                     </h4>
+                    <p className="font-semibold mt-4 text-gray-500">Silogy Fest merupakan salah satu rangkaian dari event Education Fair</p>
                     <hr className="my-4"/>
-                    <h3 className="text-2xl text-center font-bold uppercase">
-                        Pendaftaran akan dibuka dalam
-                    </h3>
-                    <h2 className="text-2xl text-center font-semibold mt-5 uppercase text-red-600 max-[768px]:text-sm">
-                        {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
-                            <p>
-                                <span>{timeLeft.days}</span>
-                                <span className="mr-3"> Hari </span>
-                                <span>{timeLeft.hours}</span>
-                                <span className="mr-3"> Jam </span>
-                                <span>{timeLeft.minutes}</span>
-                                <span className="mr-3"> Menit </span>
-                                <span>{timeLeft.seconds}</span>
-                                <span> Detik </span>
-                            </p>
-                        ) : (
-                            <p>Time is up 🔥</p>
-                        )}
-                    </h2>
+                    {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
+                        <div>
+                            <h3 className="text-2xl text-center font-bold uppercase">
+                                Pendaftaran akan dibuka dalam
+                            </h3>
+                            <h2 className="text-2xl text-center font-semibold mt-5 uppercase text-red-600 max-[768px]:text-sm">
+                                <p>
+                                    <span>{timeLeft.days}</span>
+                                    <span className="mr-3"> Hari </span>
+                                    <span>{timeLeft.hours}</span>
+                                    <span className="mr-3"> Jam </span>
+                                    <span>{timeLeft.minutes}</span>
+                                    <span className="mr-3"> Menit </span>
+                                    <span>{timeLeft.seconds}</span>
+                                    <span> Detik </span>
+                                </p>
+                            </h2>
+                        </div>
+                    ) : (
+                        <SilogyLinks />
+                    )}
                 </div>
             </div>
         </div>

@@ -19,6 +19,7 @@ import ShortLink from "./pages/ShortLink";
 import {Analytics} from "@vercel/analytics/react";
 import Countdown from "./components/event/silogy/Countdown";
 import Questionnaire from "./components/Questionnaire";
+import RegisterSilogy from "./components/event/silogy/register/RegisterSilogy";
 
 function App() {
 
@@ -97,6 +98,13 @@ function App() {
                   <Route exact path="/event/workshop/daftar" element={
                       <PrivateRoute>
                           <RegisterWorkshop />
+                      </PrivateRoute>
+                  } />
+
+                  {/* Silogy Routes */}
+                  <Route exact path="/event/silogy-expo/daftar/:types" element={
+                      <PrivateRoute>
+                          <RegisterSilogy />
                       </PrivateRoute>
                   } />
 
