@@ -4,7 +4,7 @@ import EdufairLogo from "../../../img/logo/logo-edufair-2023.png";
 const Countdown = () => {
 
     const calculateTimeLeft = () => {
-        const difference = +new Date("July 11, 2023 00:00:00 GMT+07:00") - +new Date().getTime();
+        const difference = +new Date("July 11, 2023 06:00:00 GMT+07:00") - +new Date().getTime();
         let timeLeft = {};
 
         if (difference > 0) {

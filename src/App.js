@@ -18,6 +18,7 @@ import {useQueryURL} from "./Utils/Utils";
 import ShortLink from "./pages/ShortLink";
 import {Analytics} from "@vercel/analytics/react";
 import Countdown from "./components/event/silogy/Countdown";
+import Questionnaire from "./components/Questionnaire";
 
 function App() {
 
@@ -77,11 +78,22 @@ function App() {
                   } />
 
                   {/*Private Route*/}
+
+                  {/* Global Route */}
+                  <Route exact path="/event/:event/questionnaire" element={
+                      <PrivateRoute>
+                          <Questionnaire />
+                      </PrivateRoute>
+                  } />
+
+                  {/* Webinar Routes */}
                   <Route exact path="/event/webinar/daftar" element={
                       <PrivateRoute>
                           <RegisterWebinar />
                       </PrivateRoute>
                   } />
+
+                  {/* Workshop Routes */}
                   <Route exact path="/event/workshop/daftar" element={
                       <PrivateRoute>
                           <RegisterWorkshop />
