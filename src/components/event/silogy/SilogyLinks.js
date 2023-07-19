@@ -22,7 +22,7 @@ const SilogyLinks = () => {
             />
             <ButtonLinks
                 title="Guide Book SILOGY EXPO"
-                link={`https://drive.google.com/file/d/1T91umfwqBbknDs7RzJfz1G5_n4Pp9YPN/view`}
+                link={`https://drive.google.com/file/d/1dRLWj6bFtuQB7PIqGkrsY1CRXR1hjmK1/view`}
             />
             <ButtonLinks
                 title="Format Orisinalitas Karya"
