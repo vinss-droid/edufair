@@ -45,7 +45,7 @@ const TimelineTalkshow = () => {
                     {/*</span>*/}
                 </h3>
                 <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Dilaksanakan Pada <br className="md:hidden" /> 26 Agustus 2023
+                    Dilaksanakan Pada <br className="md:hidden" /> 27 Agustus 2023
                 </time>
                 <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
                     Seluruh karya peserta akan melaksanakan Talkshow secara online / offline.

@@ -21,7 +21,7 @@ const ThanksTalkshow = ({type}) => {
                     Kamu berhasil mendaftar Talkshow <span className="text-blue-500 uppercase">({type})</span> SILOGY EXPO. Jangan lupa join ke Grup Talkshow SILOGY EXPO untuk informasi lebih lanjut!
                 </p>
                 <p className="mt-5 mb-10 font-normal text-gray-700 dark:text-gray-400 text-center">
-                    Kami tunggu kehadiran kamu di tanggal 26 Agustus nanti, terimakasih!
+                    Kami tunggu kehadiran kamu di tanggal 27 Agustus nanti, terimakasih!
                 </p>
 
                 <center>
