@@ -20,6 +20,8 @@ import {Analytics} from "@vercel/analytics/react";
 import Countdown from "./components/event/silogy/Countdown";
 import Questionnaire from "./components/Questionnaire";
 import RegisterSilogy from "./components/event/silogy/register/RegisterSilogy";
+import RegisterTalkshow from "./components/event/silogy/register/talkshow/RegisterTalkshow";
+import LinkTreeTalkshow from "./components/event/silogy/talkshow/LinkTreeTalkshow";
 
 function App() {
 
@@ -63,6 +65,7 @@ function App() {
                   <Route exact path="/" element={<Home />} />
                   <Route exact path="/workshop-pbb" element={<ShortLink to="/event/workshop/daftar" />} />
                   <Route exact path="/silogy-expo" element={<Countdown />}/>
+                  <Route exact path="/silogy-expo/talkshow" element={<LinkTreeTalkshow />}/>
                   <Route exact path="/event/webinar" element={<Webinar />} />
                   <Route exact path="/event/workshop" element={<Workshop />} />
                   <Route exact path="/event/silogy-expo" element={<SilogyExpo />} />
@@ -107,6 +110,12 @@ function App() {
                   {/*        <RegisterSilogy />*/}
                   {/*    </PrivateRoute>*/}
                   {/*} />*/}
+
+                  <Route exact path="/event/silogy-expo/talkshow/daftar/:types" element={
+                      <PrivateRoute>
+                          <RegisterTalkshow />
+                      </PrivateRoute>
+                  } />
 
               </Routes>
               <BottomNavbar />
