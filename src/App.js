@@ -102,11 +102,11 @@ function App() {
                   } />
 
                   {/* Silogy Routes */}
-                  <Route exact path="/event/silogy-expo/daftar/:types" element={
-                      <PrivateRoute>
-                          <RegisterSilogy />
-                      </PrivateRoute>
-                  } />
+                  {/*<Route exact path="/event/silogy-expo/daftar/:types" element={*/}
+                  {/*    <PrivateRoute>*/}
+                  {/*        <RegisterSilogy />*/}
+                  {/*    </PrivateRoute>*/}
+                  {/*} />*/}
 
               </Routes>
               <BottomNavbar />

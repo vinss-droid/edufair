@@ -57,7 +57,10 @@ const Countdown = () => {
                             </h2>
                         </div>
                     ) : (
-                        <SilogyLinks />
+                        // <SilogyLinks />
+                        <h1 className="text-center my-10 font-bold text-3xl max-[768px]:text-lg text-red-500">
+                            Pendaftaran Lomba SILOGY EXPO Sudah di Tutup.
+                        </h1>
                     )}
                 </div>
             </div>
